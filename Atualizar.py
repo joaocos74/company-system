@@ -19,9 +19,9 @@ class AtualizarApp(ctk.CTkToplevel):
         # Título
         ctk.CTkLabel(
             container,
-            text="Editar Clientes",
+            text="Editar Cadastro",
             font=("Century Gothic bold", 24),
-            text_color="blue"
+            text_color="teal"
         ).pack(pady=10)
 
         # Campos de entrada organizados em duas colunas

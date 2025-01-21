@@ -65,7 +65,7 @@ class PesquisarApp(ctk.CTkToplevel):
             container,
             text="PESQUISAR",
             font=("Century Gothic bold", 24),
-            text_color="blue"
+            text_color="teal"
         ).pack(pady=10)
 
         # ==================

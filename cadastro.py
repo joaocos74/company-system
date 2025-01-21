@@ -31,7 +31,7 @@ class CadastroApp(ctk.CTkToplevel):
         container.pack(fill=BOTH, expand=True, padx=20, pady=20)
 
         # Título
-        ctk.CTkLabel(container, text="CADASTRO", font=("Century Gothic bold", 24), text_color="teal").grid(row=0, column=0, columnspan=4, pady=10)
+        ctk.CTkLabel(container, text="CADASTRO DE ESTABELECIMENTO", font=("Century Gothic bold", 24), text_color="teal").grid(row=0, column=0, columnspan=4, pady=10)
 
         # Variáveis
         self.id_value = StringVar()
