@@ -51,7 +51,7 @@ class CadastroApp(ctk.CTkToplevel):
         self.excluidos_value = StringVar()
 
         # Cria arquivo Excel se não existir
-        ficheiro = pathlib.Path("clientes.xlsx")
+        ficheiro = pathlib.Path("cadastros.xlsx")
         if not ficheiro.exists():
             workbook = openpyxl.Workbook()
             folha = workbook.active
@@ -59,7 +59,7 @@ class CadastroApp(ctk.CTkToplevel):
                        "CNAE (Principal)", "Nº PARECER TÉCNICO", "ÚLTIMA INSPEÇÃO", "ALVARÁ", "VIGI-RISCO",
                        "OBSERVAÇÕES", "BAIXADOS", "EXCLUIDOS"]
             folha.append(headers)
-            workbook.save("clientes.xlsx")
+            workbook.save("cadastros.xlsx")
 
         # Campos e Labels
         fields = [
@@ -104,7 +104,7 @@ class CadastroApp(ctk.CTkToplevel):
         if not confirmar:
             return
 
-        workbook = openpyxl.load_workbook("clientes.xlsx")
+        workbook = openpyxl.load_workbook("cadastros.xlsx")
         folha = workbook.active
 
         # Geração automática do ID
@@ -129,7 +129,7 @@ class CadastroApp(ctk.CTkToplevel):
 
         # Salva no Excel
         folha.append([id_auto, nivel, classe, razao_social, nome_fantasia, endereco, cnpj_cpf, cnae, parecer, inspecao, alvara, vigi_risco, observacoes, baixados, excluidos])
-        workbook.save("clientes.xlsx")
+        workbook.save("cadastros.xlsx")
         messagebox.showinfo("Sucesso", "Cliente cadastrado com sucesso!")
 
         self.limpar()

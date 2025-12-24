@@ -199,7 +199,7 @@ class PesquisarApp(ctk.CTkToplevel):
     def carregar_opcoes(self):
         """Carrega as opções de ID e Classe a partir do Excel."""
         try:
-            workbook = openpyxl.load_workbook("clientes.xlsx")
+            workbook = openpyxl.load_workbook("cadastros.xlsx")
             folha = workbook.active
 
             self.id_options = []
@@ -242,7 +242,7 @@ class PesquisarApp(ctk.CTkToplevel):
         Lê o arquivo Excel, filtra e exibe no Treeview.
         """
         try:
-            workbook = openpyxl.load_workbook("clientes.xlsx")
+            workbook = openpyxl.load_workbook("cadastros.xlsx")
             folha = workbook.active
 
             # Limpa o Treeview
@@ -271,7 +271,7 @@ class PesquisarApp(ctk.CTkToplevel):
             self.stats_label.configure(text=f"Resultados encontrados: {total}")
 
         except FileNotFoundError:
-            messagebox.showerror("Erro", "O arquivo 'clientes.xlsx' não foi encontrado.")
+            messagebox.showerror("Erro", "O arquivo 'cadastros.xlsx' não foi encontrado.")
 
     def filtrar(self, row):
         """

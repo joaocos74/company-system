@@ -93,7 +93,7 @@ class AtualizarApp(ctk.CTkToplevel):
 
     def carregar_dados_excel(self):
         try:
-            self.workbook = openpyxl.load_workbook("clientes.xlsx")
+            self.workbook = openpyxl.load_workbook("cadastros.xlsx")
             self.sheet = self.workbook.active
 
             # Preencher os valores dos ComboBox
@@ -115,7 +115,7 @@ class AtualizarApp(ctk.CTkToplevel):
                 self.tree.insert("", END, values=row)
 
         except FileNotFoundError:
-            messagebox.showerror("Erro", "Arquivo 'clientes.xlsx' não encontrado.")
+            messagebox.showerror("Erro", "Arquivo 'cadastros.xlsx' não encontrado.")
 
     def carregar_dados(self, event):
         selected_item = self.tree.focus()
@@ -131,7 +131,7 @@ class AtualizarApp(ctk.CTkToplevel):
         try:
             filtro = {label: var.get().strip() for label, var in self.fields.items() if var.get().strip()}
 
-            self.workbook = openpyxl.load_workbook("clientes.xlsx")
+            self.workbook = openpyxl.load_workbook("cadastros.xlsx")
             self.sheet = self.workbook.active
 
             for row in self.tree.get_children():
@@ -144,7 +144,7 @@ class AtualizarApp(ctk.CTkToplevel):
                     self.tree.insert("", END, values=row)
 
         except FileNotFoundError:
-            messagebox.showerror("Erro", "Arquivo 'clientes.xlsx' não encontrado.")
+            messagebox.showerror("Erro", "Arquivo 'cadastros.xlsx' não encontrado.")
 
     def alterar_registro(self):
         selected_item = self.tree.focus()
@@ -171,7 +171,7 @@ class AtualizarApp(ctk.CTkToplevel):
             messagebox.showerror("Erro", "Registro não encontrado no Excel.")
             return
 
-        self.workbook.save("clientes.xlsx")
+        self.workbook.save("cadastros.xlsx")
         messagebox.showinfo("Sucesso", "Registro alterado com sucesso!")
 
         # Atualizar a visualização da tabela
